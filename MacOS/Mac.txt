@@ -1,1 +1,23 @@
-Todo: Modified in MacOS X, python 2.7
+Todo: Modified in MacOS X, python 2.7.10
+
+1. How to install SQLAlchemy
+open a console, type : sudo easy_install sqlalchemy
+
+2.sqlachemy sqlite3
+
+use .db file in same dir
+#sqlite://<nohostname>/<path>
+#where <path> is relative:
+engine = create_engine('sqlite:///foo.db')
+
+add an absolute file path, please use these codes
+#Unix/Mac - 4 initial slashes in total
+engine = create_engine('sqlite:////absolute/path/to/foo.db')
+#Windows
+engine = create_engine('sqlite:///C:\\path\\to\\foo.db')
+#Windows alternative using raw string
+engine = create_engine(r'sqlite:///C:\path\to\foo.db')
+
+Also you can use a memory database(:memory:)
+engine = create_engine('sqlite://')
+
